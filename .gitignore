@@ -18,7 +18,6 @@ eggs
 
 # specific
 .nbgrader.log
-*.pdf
 *.cache
 *.lock
 *.html
