@@ -98,6 +98,11 @@ f, axs = plt.subplots(2, 1, figsize=(7 * f, 10 * f))
 
 graphics.plot_domain(gdirs, ax=axs[0], smap=sm)
 
+letkm = dict(color='black', ha='left', va='bottom', fontsize=16,
+             bbox=dict(facecolor='white', edgecolor='black'))
+xt, yt = 6, 6
+axs[0].text(xt, yt, 'a', **letkm)
+
 sm.set_data()
 sm.set_lonlat_contours(interval=0)
 sm.set_geometry()
@@ -105,5 +110,7 @@ sm.set_text()
 graphics.plot_inversion(gdirs, ax=axs[1], smap=sm,
                         linewidth=1, add_scalebar=False,
                         title='', vmax=250)
+xt, yt = 6, 6
+axs[1].text(xt, yt, 'b', **letkm)
 plt.tight_layout()
 plt.savefig(fig_path, dpi=150, bbox_inches='tight')
